@@ -1,0 +1,28 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><h1>Login</h1></header>
+<main class="form-container">
+<form onsubmit="login(event)">
+<input type="email" id="loginEmail" placeholder="Email" required><br>
+<input type="password" id="loginPassword" placeholder="Password" required><br>
+<button type="submit">Login</button>
+<p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+</form>
+</main>
+<script>
+function login(e){
+e.preventDefault();
+const email = document.getElementById('loginEmail').value;
+const pass = document.getElementById('loginPassword').value;
+const user = JSON.parse(localStorage.getItem('user'));
+if(user && user.email === email && user.pass === pass){
+alert('Welcome back!'); location='index.html';
+} else {
+alert('Invalid credentials');
+}}
+</script>
+</body>
+</html>

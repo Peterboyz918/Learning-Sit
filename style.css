@@ -1,0 +1,136 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f4f8fb;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Header and navigation */
+header {
+  background: #004466;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main container styling */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3 {
+  color: #004466;
+  margin-top: 0;
+}
+
+/* Paragraphs & text */
+p {
+  line-height: 1.6;
+}
+
+/* Buttons */
+button, a.button-link {
+  background: #004466;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+button:hover, a.button-link:hover {
+  background: #006699;
+}
+
+/* Forms */
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Review cards */
+.review-card, .material-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.review-card:hover, .material-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.review-stars {
+  color: #f9b500;
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Gallery on homepage */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.gallery div {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gallery div:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+.top-logo {
+  position: absolute;
+  top: 10px;
+  left: 35px;
+  width: 80px;  /* adjust size as you want */
+  height: 100px;
+  border-radius: 8px;
+}

@@ -1,0 +1,38 @@
+<!-- ✅ Favicon in browser tab -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile - Peter's Computer Training</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="logo.png" />
+</head>
+<body style="background-image: url('1.png');">
+  <header>
+    <h1>Peter's Computer Training</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="notes.html">Notes</a>
+      <a href="materials.html">Training Materials</a>
+      <a href="profile.html">Profile</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Your Profile</h2>
+    <p><strong>Name:</strong> Student Name</p>
+    <p><strong>Email:</strong> xxxxxx</p>
+    <button onclick="logout()">Logout</button>
+  </main>
+  <script>
+    function logout() {
+      alert('You have been logged out.');
+      location='login.html';
+    }
+  </script>
+  <script src="chatbot.js"></script>
+</body>
+</html>

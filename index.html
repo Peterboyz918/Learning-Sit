@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peter's Computer Training - Home</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ✅ Google Font for clean professional look -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- ✅ Favicon in browser tab -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <style>
+    .top-logo {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      width: 60px;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body style="background-image: url('1.png');">
+  <header>
+    <h1>Peter's Computer Training</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="notes.html">Notes</a>
+      <a href="materials.html">Training Materials</a>
+      <a href="profile.html">Profile</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <img src="21.png" alt="Logo" class="top-logo">
+  </header>
+
+  <main>
+    <section class="welcome">
+      <h2>Welcome!</h2>
+      <p>Start your journey to mastering computer skills here. Explore training resources, take private notes, and reach your goals.</p>
+    </section>
+
+    <section class="gallery">
+      <div><img src="2.png" alt="Basics"><p>Computer Basics</p></div>
+      <div><img src="3.png" alt="Typing"><p>Typing Skills</p></div>
+      <div><img src="4.png" alt="Internet"><p>Internet Use</p></div>
+      <div><img src="5.png" alt="Security"><p>Online Safety</p></div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const chatBtn = document.createElement('button');
+      chatBtn.innerHTML = '💬';
+      Object.assign(chatBtn.style, {
+        position: 'fixed', bottom: '15px', right: '15px',
+        zIndex: '1000', fontSize: '26px', padding: '12px',
+        borderRadius: '50%', background: '#004466', color: '#fff',
+        border: 'none', cursor: 'pointer'
+      });
+      document.body.appendChild(chatBtn);
+
+      const chatbotDiv = document.createElement('div');
+      chatbotDiv.id = 'chatbot';
+      Object.assign(chatbotDiv.style, {
+        position: 'fixed', bottom: '70px', right: '15px',
+        width: '300px', maxHeight: '400px', overflowY: 'auto',
+        background: '#f9f9f9', border: '2px solid #004466',
+        borderRadius: '10px', padding: '10px', display: 'none'
+      });
+      chatbotDiv.innerHTML = `
+        <div id="chatContent">Hi! 👋 Need help?<br></div>
+        <input type="text" id="chatInput" placeholder="Type your question..." style="width:95%;margin-top:5px;padding:5px;">
+      `;
+      document.body.appendChild(chatbotDiv);
+
+      chatBtn.addEventListener('click', function() {
+        chatbotDiv.style.display = chatbotDiv.style.display === 'block' ? 'none' : 'block';
+        document.getElementById('chatInput').focus();
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && document.getElementById('chatInput') === document.activeElement) {
+          replyChat();
+        }
+      });
+    });
+
+    function replyChat() {
+      const input = document.getElementById('chatInput');
+      const msg = input.value.trim();
+      if (msg) {
+        const chatContent = document.getElementById('chatContent');
+        let response = generateResponse(msg);
+        chatContent.innerHTML += `<p><strong>You:</strong> ${msg}</p><p><strong>Bot:</strong> ${response}</p>`;
+        input.value = '';
+        chatContent.scrollTop = chatContent.scrollHeight;
+      }
+    }
+
+    function generateResponse(message) {
+      message = message.toLowerCase();
+      if (message.includes('hello') || message.includes('hi')) {
+        return 'Hello there! 👋 How can I assist you today?';
+      }
+      if (message.includes('pdf') || message.includes('notes') || message.includes('training')) {
+        return 'You can view your notes under the Training Materials tab.';
+      }
+      if (message.includes('profile') || message.includes('account')) {
+        return 'Head over to the Profile page to see your details.';
+      }
+      if (message.includes('contact') || message.includes('reach')) {
+        return 'You can contact me via WhatsApp, Facebook, or Twitter on the Contact page.';
+      }
+      if (message.includes('bye')) {
+        return 'Goodbye! 👋 Feel free to chat again anytime.';
+      }
+      return 'I\'m here to help! Could you please ask in a different way?';
+    }
+  </script>
+</body>
+</html>

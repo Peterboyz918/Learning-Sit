@@ -1,0 +1,27 @@
+<!-- signup.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sign Up</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><h1>Sign Up</h1></header>
+<main class="form-container">
+<form onsubmit="signup(event)">
+<input type="text" id="signupName" placeholder="Name" required><br>
+<input type="email" id="signupEmail" placeholder="Email" required><br>
+<input type="password" id="signupPassword" placeholder="Password" required><br>
+<button type="submit">Sign Up</button>
+<p>Already have an account? <a href="login.html">Login</a></p>
+</form>
+</main>
+<script>
+function signup(e){
+e.preventDefault();
+const user={name:document.getElementById('signupName').value,
+email:document.getElementById('signupEmail').value,
+pass:document.getElementById('signupPassword').value};
+localStorage.setItem('user',JSON.stringify(user));
+alert('Account created!'); location='login.html';
+}
+</script>
+</body>
+</html>
